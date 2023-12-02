@@ -1,0 +1,50 @@
+# Virtual environments
+venv/
+env/
+__pycache__/
+
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+
+# Secret key
+*.secret_key
+
+# Database
+db.sqlite3
+
+# Media files
+media/
+
+# Compiled Python files
+*.pyc
+
+# Local development settings
+local_settings.py
+
+# Environment variables
+.env
+
+# IDE settings
+.idea/
+.vscode/
+
+# Miscellaneous
+*.pyproj
+*.pyc
+*.pyo
+__pycache__/
+*.db
+*.sqlite3
+*.log
+*.pot
+*.mo
+*.potx
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
