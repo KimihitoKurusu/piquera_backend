@@ -2,7 +2,7 @@
 venv/
 env/
 __pycache__/
-
+venv
 # Python bytecode
 *.pyc
 *.pyo
