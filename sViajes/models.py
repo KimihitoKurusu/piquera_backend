@@ -11,7 +11,7 @@ class Marca(models.Model):
     
 
 class Taxi(models.Model):
-    id = models.CharField(verbose_name="Identificador", max_length=20, primary_key=True)
+    id = models.CharField(verbose_name="Identificador", max_length=255, primary_key=True)
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     capacidad = models.IntegerField(default=2)
     chofer = models.CharField(max_length=100)
