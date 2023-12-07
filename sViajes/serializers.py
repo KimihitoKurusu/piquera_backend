@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Marca, Taxi, Cliente, SViaje, Factura, ViajeFactura
+from .models import Marca, Taxi, Cliente, SViaje
 
 class MarcaSerializer(serializers.ModelSerializer):
 

@@ -2,7 +2,7 @@ import random
 import uuid
 from faker import Faker
 from django.core.management.base import BaseCommand
-from sViajes.models import Marca, Taxi, Cliente, SViaje, Factura, ViajeFactura
+from sViajes.models import *
 
 fake = Faker()
 
@@ -51,23 +51,6 @@ class Command(BaseCommand):
                 cant_personas=random.randint(1, 5),
                 distancia=random.uniform(1, 100),
                 completado=random.choice([True, False])
-            )
-
-        # Seed data for Factura model
-        for _ in range(10):
-            Factura.objects.create(
-                cliente=random.choice(clientes),
-                date=fake.date_this_decade(),
-                precio=random.uniform(1, 100)
-            )
-
-        # Seed data for ViajeFactura model
-        viajes = SViaje.objects.all()
-        facturas = Factura.objects.all()
-        for _ in range(10):
-            ViajeFactura.objects.create(
-                viaje=random.choice(viajes),
-                factura=random.choice(facturas)
             )
 
         self.stdout.write(self.style.SUCCESS('Data seeded successfully!'))

@@ -37,15 +37,3 @@ class SViaje(models.Model):
     completado = models.BooleanField(default=False)
     def __str__(self):
         return f"{self.recogidaDate} {self.destino}"
-
-class Factura(models.Model):
-    cliente = models.ForeignKey(Cliente, verbose_name="Cliente", on_delete=models.CASCADE)
-    date = models.DateField(auto_now=False, auto_now_add=False)
-    precio = models.DecimalField(max_digits=7, decimal_places=2)
-    def __str__(self):
-        return self.cliente.__class__.nombre
-    
-
-class ViajeFactura(models.Model):
-    viaje = models.ForeignKey(SViaje, verbose_name="Viaje", on_delete=models.CASCADE)
-    factura = models.ForeignKey(Factura, verbose_name="Factura", on_delete=models.CASCADE)
