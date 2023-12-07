@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Marca(models.Model):
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=100, unique=True)
     tiempo_km = models.IntegerField(verbose_name="TiempoPorKilometro")
     precio_km = models.DecimalField(verbose_name="PrecioPorKilometro", decimal_places=2, max_digits=5)
     def __str__(self):

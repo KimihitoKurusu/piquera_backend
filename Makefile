@@ -11,5 +11,8 @@ start:
 migrate:
 	pipenv run python manage.py migrate
 
+makemigrations:
+	pipenv run python manage.py makemigrations
+
 superuser:
 	pipenv run python manage.py createsuperuser

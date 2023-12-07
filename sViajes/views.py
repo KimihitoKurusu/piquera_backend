@@ -11,7 +11,6 @@ from .models import *
 class MarcaViewSet(viewsets.ModelViewSet):
 
     queryset = Marca.objects.all()
-
     serializer_class = MarcaSerializer
 
 class TaxiViewSet(viewsets.ModelViewSet):
