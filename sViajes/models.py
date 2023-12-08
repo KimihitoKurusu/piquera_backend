@@ -1,7 +1,11 @@
 from django.db import models
 
 # Create your models here.
-
+TAXI_STATE = (
+    ('Libre', 'Libre'),
+    ('Ocupado', 'Ocupado'),
+    ('En reparación', 'En reparación'),
+)
 class Marca(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
     tiempo_km = models.IntegerField(verbose_name="TiempoPorKilometro")
@@ -12,10 +16,10 @@ class Marca(models.Model):
 
 class Taxi(models.Model):
     id = models.CharField(verbose_name="Identificador", max_length=255, primary_key=True)
-    marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
+    marca_id = models.ForeignKey(Marca, on_delete=models.CASCADE)
     capacidad = models.IntegerField(default=2)
     chofer = models.CharField(max_length=100)
-    estado = models.CharField(max_length=1)
+    estado = models.CharField(max_length=100, choices=TAXI_STATE)
     def __str__(self):
         return self.chofer
     

@@ -48,3 +48,4 @@ __pycache__/
 # Windows
 Thumbs.db
 Desktop.ini
+/Pipfile.lock
